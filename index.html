@@ -4,11 +4,10 @@
         <title>Mājaslapa Berkovičs</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/css/mansStils.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+        <link rel="stylesheet" type="text/css" href="css/mansStils.css">
     </head>
     <body>
 
@@ -23,8 +22,7 @@
                 <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="showSection('Rgrafik')">RASTRGRAFIKA</a>
                 <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="showSection('cube')">3D Kubs</a>
                 <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="window.location.href='otrais.html'">Otrā lapa</a>
-                <!--<a href="#" class="window.location.href" onclick= "otrais.html">otrais.html</a>-->
-               
+                
                 <span class="w3-bar-item w3-padding-large w3-right">Ričards Berkovičs</span>
             </div>
         </div>
@@ -60,8 +58,6 @@
                 <img src="Images/word1.png" alt="Image 1">
                 <img src="Images/word2.png" alt="Image 2">
             </div>
-
-
         </div>
 
         <div id="excel" class="w3-container w3-content w3-padding-64 content-section">
@@ -104,11 +100,17 @@
         
 
             <div class="image-container">
-                <img src="Images/kubs1.jpeg" alt="Image 1">
+                <img id="kubs" src="Images/kubs1.jpeg" alt="Image 1">
             </div>
         </div>
 
             <script>
+                // for the call from the second page
+                // take parameter and show the div with this paramater value
+                params = new URLSearchParams(document.location.search);
+                pTagValue = params.get("p_tag_value");
+                // console.info('pTagValue='+pTagValue);
+                
                 function showSection(sectionId) {
                     // Hide all sections
                     document.querySelectorAll('.main-content, .content-section').forEach(section => {
@@ -117,8 +119,15 @@
                     // Show the selected section
                     document.getElementById(sectionId).style.display = 'block';
                 }
-            // Show the home section by default
-                showSection('home');
+                
+                // Show the home section by default
+                gotoValue = 'home';
+                if (pTagValue !== null )
+                    gotoValue = pTagValue;
+                
+                showSection(gotoValue);
+                    
+//                showSection('home');
             </script>
 
     </body>
