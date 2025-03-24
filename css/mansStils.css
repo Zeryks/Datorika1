@@ -1,0 +1,40 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Mar 25, 2025, 12:10:09 AM
+    Author     : Zery
+*/
+
+  .image-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            .row {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+            }
+            .bottom {
+                display: flex;
+                justify-content: center;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                width: 500px;
+            }
+            .image-container {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                flex-wrap: nowrap;
+            }
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                width: 600px;
+            }            
